@@ -13,7 +13,7 @@
     <p>Mata Pelajaran</p>
     <ul>
 
-		@foreach($matkul as $m)
+		@foreach($mata kuliah as $m)
 
 		<li>{{ $m }}</li>
 
