@@ -1,7 +1,5 @@
 @extends('template2')
-
 @section('title', 'Data Nilai Mahasiswa')
-
 @section('konten')
 
 <a href="/nilaikuliah/tambah" class="btn btn-primary mb-3">
@@ -30,12 +28,9 @@
             <td>{{ $n->nilaihuruf }}</td>
             <td>{{ $n->bobot }}</td>
             <td>
-                <a href="/nilaikuliah/edit/{{ $n->ID }}"
-                    class="btn btn-warning btn-sm">
-                    Edit
+                <a href="/nilaikuliah/edit/{{ $n->ID }}" class="btn btn-warning btn-sm"> Edit
                 </a>
-                <a href="/nilaikuliah/hapus/{{ $n->ID }}"
-                    class="btn btn-danger btn-sm"
+                <a href="/nilaikuliah/hapus/{{ $n->ID }}" class="btn btn-danger btn-sm"
                     onclick="return confirm('Yakin hapus data ini?')">
                     Hapus
                 </a>

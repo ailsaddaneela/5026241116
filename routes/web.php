@@ -8,6 +8,15 @@ use App\Http\Controllers\PegawaiDBController;
 //Controller Nilai Kuliah
 use App\Http\Controllers\NilaiKuliahController;
 
+//Controller Keranjang Belanja
+use App\Http\Controllers\KeranjangBelanjaController;
+
+//Controller Siswa
+use App\Http\Controllers\SiswaController;
+
+// Controller Modem (Latihan PRA EAS)
+use App\Http\Controllers\ModemController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -54,3 +63,25 @@ Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store']);
 Route::get('/nilaikuliah/edit/{id}', [NilaiKuliahController::class, 'edit']);
 Route::post('/nilaikuliah/update', [NilaiKuliahController::class, 'update']);
 Route::get('/nilaikuliah/hapus/{id}', [NilaiKuliahController::class, 'hapus']);
+
+//CRUD Keranjang Belanja
+Route::get('/keranjangbelanja', [KeranjangBelanjaController::class, 'index']);
+Route::get('/keranjangbelanja/tambah', [KeranjangBelanjaController::class, 'tambah']);
+Route::post('/keranjangbelanja/store', [KeranjangBelanjaController::class, 'store']);
+Route::get('/keranjangbelanja/batal/{id}', [KeranjangBelanjaController::class, 'batal']);
+
+//CRUD Siswa
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+//CRUD Modem
+Route::get('/modem', [ModemController::class, 'index']);
+Route::get('/modem/tambah', [ModemController::class, 'tambah']);
+Route::post('/modem/store', [ModemController::class, 'store']);
+Route::get('/modem/edit/{id}', [ModemController::class, 'edit']);
+Route::post('/modem/update', [ModemController::class, 'update']);
+Route::get('/modem/hapus/{id}', [ModemController::class, 'hapus']);

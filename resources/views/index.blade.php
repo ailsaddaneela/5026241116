@@ -3,23 +3,25 @@
 @section('konten')
 
     <center>
-        <br/>
-        <br/>
+        <br />
+        <br />
         <p>Cari Data Pegawai :</p>
         <form action="/pegawaicari" method="GET">
             <input type="text" name="cari" placeholder="Cari Pegawai .." class="form-control">
-            <input type="submit" value="CARI" class="btn btn-secondary">
+            <input type="submit" value="CARI" class="btn btn-primary" style="margin-top:10px;">
         </form>
 
-        <br/>
-        <table class="table table-striped table-hover">
-            <tr>
-                <th>Nama</th>
-                <th>Jabatan</th>
-                <th>Umur</th>
-                <th>Alamat</th>
-                <th>Opsi</th>
-            </tr>
+        <br />
+        <table class="table table-striped table-bordered">
+            <thead class="table-dark">
+                <tr>
+                    <th>Nama</th>
+                    <th>Jabatan</th>
+                    <th>Umur</th>
+                    <th>Alamat</th>
+                    <th>Opsi</th>
+                </tr>
+            </thead>
             @foreach ($pegawai as $p)
                 <tr>
                     <td>{{ $p->pegawai_nama }}</td>
@@ -34,7 +36,14 @@
                 </tr>
             @endforeach
         </table>
-        <ul class="pagination" style="margin:20px 0"> {{ $pegawai->links() }} </ul>
-            <a href="/pegawaitambah" class="btn btn-primary mt-1 mb-5"> + Tambah Pegawai Baru</a>
+        <div style="margin-top:15px;">
+            {{ $pegawai->links() }}
+        </div>
+
+        <div class="text-center">
+            <a href="/pegawaitambah" class="btn btn-primary mt-1 mb-5">
+                + Tambah Pegawai Baru
+            </a>
+        </div>
     </center>
 @endsection

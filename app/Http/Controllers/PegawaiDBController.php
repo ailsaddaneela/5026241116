@@ -89,4 +89,3 @@ class PegawaiDBController extends Controller
 		return redirect('/pegawai');
 	}
 }
-	// method untuk menampilkan view form tambah pegawai
