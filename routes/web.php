@@ -5,6 +5,9 @@ use App\Http\Controllers\DosenController ;
 use App\Http\Controllers\PegawaiController ;
 use App\Http\Controllers\PegawaiDBController;
 
+//Controller Nilai Kuliah
+use App\Http\Controllers\NilaiKuliahController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -43,3 +46,11 @@ Route::get('/pegawaiedit/{id}', [PegawaiDBController::class, 'edit']);
 Route::post('/pegawaiupdate', [PegawaiDBontroller::class, 'update']);
 Route::get('/pegawaihapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawaicari', [PegawaiDBController::class, 'cari']);
+
+//CRUD Nilai Kuliah
+Route::get('/nilaikuliah', [NilaiKuliahController::class, 'index']);
+Route::get('/nilaikuliah/tambah', [NilaiKuliahController::class, 'tambah']);
+Route::post('/nilaikuliah/store', [NilaiKuliahController::class, 'store']);
+Route::get('/nilaikuliah/edit/{id}', [NilaiKuliahController::class, 'edit']);
+Route::post('/nilaikuliah/update', [NilaiKuliahController::class, 'update']);
+Route::get('/nilaikuliah/hapus/{id}', [NilaiKuliahController::class, 'hapus']);
