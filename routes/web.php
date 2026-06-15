@@ -17,6 +17,9 @@ use App\Http\Controllers\SiswaController;
 // Controller Modem (Latihan PRA EAS)
 use App\Http\Controllers\ModemController;
 
+// Controller tagihan_air
+use App\Http\Controllers\TagihanAirController;
+
 Route::get('/', function () {
     return view('welcome');
 });
@@ -85,3 +88,8 @@ Route::post('/modem/store', [ModemController::class, 'store']);
 Route::get('/modem/edit/{id}', [ModemController::class, 'edit']);
 Route::post('/modem/update', [ModemController::class, 'update']);
 Route::get('/modem/hapus/{id}', [ModemController::class, 'hapus']);
+
+// CRUD Tagihan Air
+Route::get('/eas', [TagihanAirController::class, 'index']);
+Route::get('/eas/tambah', [TagihanAirController::class, 'tambah']);
+Route::post('/eas/store', [TagihanAirController::class, 'store']);
